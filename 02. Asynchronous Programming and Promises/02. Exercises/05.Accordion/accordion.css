@@ -4,14 +4,16 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-#accordion {
+/*changed from #accordion*/
+.accordion {
     border: 2px solid #cdc7c7;
     display: inline-block;
     width: 40%;
     font-size: 1.3rem;
 }
 
-#accordion p {
+/*changed from #accordion*/
+.accordion p {
     margin: 1em;
 }
 
@@ -26,7 +28,8 @@ body {
     letter-spacing: 3px;
 }
 
-#extra {
+/*changed from #extra*/
+.extra {
     display: none;
 }
 
