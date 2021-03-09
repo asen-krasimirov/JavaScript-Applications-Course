@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <table id="results">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Faculty Number</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Custom Made Form -->
+    <form id='addStudenForm'>
+        <h3 >FORM</h3>
+        <input type="text" id="idNum" placeholder="ID...", name="ID">
+        <input type="text" id="firstName" placeholder="First Name...", name="FirstName">
+        <input type="text" id="lastName" placeholder="Last Name...", name="LastName">
+        <input type="text" id="facultyNumber" placeholder="Faculty Number...", name="FacultyNumber">
+        <input type="text" id="grade" placeholder="Grade...", name="Grade">
+        <button>Submit</button>
+    </form>
+
+    <script src="./app.js"></script>
+    <!-- Custom Form Data Getter -->
+    <script src="./getFormData.js"></script>
+</body>
+
+</html>

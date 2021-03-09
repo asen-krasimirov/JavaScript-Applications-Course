@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <input type="text" name="title" />
+        <textarea name="content"></textarea>
+        <input type="submit" value="Create Article" />
+      </form>
+
+      <script>
+          const form = document.querySelector('form');
+
+          form.addEventListener('submit', async event => {
+            event.preventDefault();
+            const url = `http://localhost:3030/jsonstore/bus/businfo/1287/buses/`;
+
+            const formData = new FormData(form);
+            const contentToSend = {};
+            
+            for (let [name, value] of [...formData.entries()]) {
+                contentToSend[name] = value;
+            }
+
+            const response = await fetch(url, {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(contentToSend)
+            });
+
+            const data = await response.json();
+            console.log(data);
+
+          });
+      </script>
+      
+</body>
+</html>

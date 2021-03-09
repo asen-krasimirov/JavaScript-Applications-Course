@@ -1,0 +1,1 @@
+loadFurnitureElements(false);

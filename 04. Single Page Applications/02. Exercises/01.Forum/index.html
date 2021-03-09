@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3cd69e2433.js" crossorigin="anonymous"></script>
+    <script src="src/app.js" type="module"></script>
+    <title>SoftUni Forum</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="mini-navbar-wrap">
+            <div class="logo-wrap">
+                <p class="logo"><span class="logo">SoftUni Forum</span></p>
+            </div>
+            <div class="mini-navbar">
+
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a id="homeBtn" href="#">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <main>
+            
+            <!-- homepage -->
+            <section id="topicsOverviewSection">
+
+                <div id="newTopicFormHolder" class="new-topic-border">
+
+                    <div class="header-background">
+                        <span>New Topic</span>
+                    </div>
+                    
+                    <form id="newTopicForm">
+                        <div class="new-topic-title">
+                            <label for="topicName">Title <span class="red">*</span></label>
+                            <input type="text" name="topicName" id="topicName">
+                        </div>
+                        <div class="new-topic-title">
+                            <label for="username">Username <span class="red">*</span></label>
+                            <input type="text" name="username" id="username">
+                        </div>
+                        <div class="new-topic-content">
+                            <label for="postText">Post <span class="red">*</span></label>
+                            <textarea type="text" name="postText" id="postText" rows="8" class="height"></textarea>
+                        </div>
+                        <div class="new-topic-buttons">
+                            <button class="cancel">Cancel</button>
+                            <button class="public">Post</button>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div id="topicsHoler" class="topic-title">
+
+                    <!-- all topics -->
+
+                    <!-- <div class="topic-container">
+                        <div class="topic-name-wrapper">
+                            <div class="topic-name">
+                                <a href="#" class="normal">
+                                    <h2>JS Advanced course</h2>
+                                </a>
+                                <div class="columns">
+                                    <div>
+                                        <p>Date: <time>2020-04-10T15:08:28.431Z</time></p>
+                                        <div class="nick-name">
+                                            <p>Username: <span>Johny</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="subscribers">
+    
+                                        <button class="unsubscribe">Unsubscribe</button>
+    
+                                        <p>Subscribers: <span>123</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </section>
+
+            <!-- inTopic -->
+            <section id="inTopicSection">
+
+                <!-- topic content  -->
+                <div class="topic-content">
+                    <!-- topic-title  -->
+                    <div class="topic-title">
+                        <div class="topic-name-wrapper">
+                            <div class="topic-name">
+                                <h2 id="infoTopicName">Angular 10</h2>
+                                <p>Date: <time id="infoTopicDate">2020-10-10 12:08:28</time></p>
+                            </div>
+                            <!-- <div class="subscribers">
+                                <p>Subscribers: <span>456</span></p>
+                                <button class="subscribe">Subscribe</button>
+                            <button class="unsubscribe">Unsubscribe</button>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <!-- comment section -->
+                    <div id="commentsHoler" >
+                        <!-- 
+                        <div class="comment">
+                            <header class="header">
+                                <p><span>Mark</span> posted on <time>2020-10-10 14:28:11</time></p>
+                            </header>
+                            <div class="comment-main">
+                                <div class="userdetails">
+                                    <img src="./static/profile.png" alt="avatar">
+                                </div>
+                                <div class="post-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur </p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <p><span>3</span> likes</p>
+                            </div>
+                        </div>  
+                        -->
+                    </div>
+
+                    <div class="answer-comment">
+                        <p><span>currentUser</span> comment:</p>
+                        <div class="answer">
+                            <form id="newCommentForm">
+                                <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
+                                <div>
+                                    <label for="username">Username <span class="red">*</span></label>
+                                    <input type="text" name="username" id="username">
+                                </div>
+                                <button>Post</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+    </main>
+
+    </div>
+
+    <footer>
+        <p>This site is designed to be used for training purposes at SoftUni.</p>
+        <p>You can find the real SoftUni forum at this link:</p>
+        <p><span><a href="https://softuni.bg/forum">https://softuni.bg/forum</a></span></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <label> <input id="data" type="text", placeholder="Enter Data"></label>
+    <label> <input id="idData" type="text", placeholder="Enter ID"></label>
+
+    <input id='get' type="button", value="Get by ID">    
+    <input id='create' type="button", value="Create new entry">    
+    <input id='update' type="button", value="Update entry">    
+    <input id='delete' type="button", value="Delete entry by ID">    
+    <input id='getAll' type="button", value="Get all data">    
+</body>
+<script>
+    const dataInput = document.getElementById('data');
+    const idInput = document.getElementById('idData');
+    const url = `http://localhost:3030/jsonstore/bus/businfo/1287/buses/`;
+
+    document.querySelector('body').addEventListener('click', event => {
+        const target = event.target;
+        if (target.tagName != 'INPUT' || target.id == 'data' || target.id == 'idData') { return; }
+        const idConnector = {
+            'create': sendData,
+            'get': getData,
+            'update': updateData,
+            'delete': deleteData,
+            'getAll': getAllData,
+        }
+
+        let data = dataInput.value;
+        let id = idInput.value;
+
+        idConnector[target.id](data, id);
+    });
+
+    async function getData(_, id) {
+        const response = await fetch(url + id);
+        const data = await response.json();
+
+        console.log(data);
+        return data;
+    }
+
+    async function getAllData() {
+        const response = await fetch(url);
+        console.log(await response.json());
+    }
+
+    async function sendData(data) {
+        data = JSON.parse(data);
+        const response = await fetch(url, {
+            method: 'post',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+        console.log(await response.json());
+    }
+
+    async function deleteData(_, id) {
+        const response = await fetch(url + id, {
+            method: 'delete'
+        });
+        console.log(await response.json());
+    }
+
+    async function updateData(data, id) {
+        if (data) {
+            data = JSON.parse(data);
+        }
+        const response = await fetch(url + id, {
+            method: 'put',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+    }
+
+</script>
+
+</html>

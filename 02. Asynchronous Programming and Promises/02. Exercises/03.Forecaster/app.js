@@ -45,7 +45,7 @@ function attachEvents() {
             createUpcomingWeatherInformaitonElems(upcomingData.forecast);
 
         } catch (error) {
-            informationDiv.textContent = 'Error';
+            todayConditionHolder.appendChild(e('p', [['textContent', 'Error']]));
         }
     }
 
