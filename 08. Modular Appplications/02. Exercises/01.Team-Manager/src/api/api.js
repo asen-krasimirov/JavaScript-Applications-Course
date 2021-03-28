@@ -49,7 +49,7 @@ export function createAPIDialog() {
     }
 
     async function updateRequest(url, body) {
-        return await makeRequest(url, 'put', body);
+        return await makeRequest(url, 'put', {}, body);
     }
 
     return {

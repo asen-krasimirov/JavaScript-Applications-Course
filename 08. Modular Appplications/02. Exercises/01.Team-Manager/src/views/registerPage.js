@@ -38,12 +38,10 @@ async function onSubmit(event) {
         return a;
     }, {});
 
-
-
     try {
         toggleInputs();
         validateForm();
-        await authenticate({ email, password });
+        await authenticate({ email, password, username });
     } catch (error) {
         target.querySelector('div.error').textContent = error.message;
     } finally {

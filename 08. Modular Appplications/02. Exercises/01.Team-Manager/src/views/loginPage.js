@@ -28,12 +28,11 @@ export function loadLoginPageContent(context) {
 async function onSubmit(event) {
     event.preventDefault();
     const target = event.target;
-
+    
     let { email, password } = [...(new FormData(target))].reduce((a, [key, value]) => {
         a[key] = value;
         return a;
     }, {});
-
 
     try {
         toggleInputs();
