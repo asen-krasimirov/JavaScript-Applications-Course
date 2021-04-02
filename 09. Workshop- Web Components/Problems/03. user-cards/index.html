@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Card - Component</title>
+    <script src="/03. user-cards/app.js" type="module"></script>
+</head>
+
+<body>
+    <h1>User Cards</h1>
+
+    <user-card avatarUrl="/03. user-cards/images/profile-pic-1.png" userName="George">
+        <slot slot="email">george@123.bg</slot>
+        <slot slot="phone">0874031617</slot>
+    </user-card>
+
+    <user-card avatarUrl="/03. user-cards/images/profile-pic-2.png" userName="Иван">
+        <slot slot="email">ivanKeks@123.bg</slot>
+        <slot slot="phone">0886031515</slot>
+    </user-card>
+    
+</body>
+
+</html>

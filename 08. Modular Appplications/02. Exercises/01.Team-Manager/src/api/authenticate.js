@@ -8,5 +8,5 @@ export async function authenticate(body, isRegistering=true) {
     let response = await (await responseFunc(body)).json();
     sessionStorage.authToken = response.accessToken;
     sessionStorage.userId = response._id;
-    page.redirect('/myTeams');
+    page.redirect('/myTeams/' + response._id);
 }

@@ -58,10 +58,20 @@ export async function changeUserStatus(userId, body) {
 export async function getAllTeams() {
     return await api.getData(endpoints.allTeams);
 }
-export async function getTeamById(id) {
-    return await api.getData(endpoints.allTeams + '/' + id);
+
+export async function getAllOfMemberTeams(userId) {
+    let url = endpoints.allUsers + `?where=_ownerId%3D%22${userId}%22%20AND%20status%3D%22member%22&load=team%3DteamId%3Ateams`;
+    return await api.getData(url);
+}
+
+export async function getTeamById(teamId) {
+    return await api.getData(endpoints.allTeams + '/' + teamId);
 }
 
 export async function createTeam(body) {
     return await api.postData(endpoints.allTeams, body);
+}
+
+export async function editTeam(teamId, body) {
+    return await api.updateRequest(endpoints.allTeams + '/' + teamId, body);
 }
